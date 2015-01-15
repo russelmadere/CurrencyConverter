@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -60,6 +61,11 @@ public class MainActivity extends ActionBarActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            // As part of the learning process, this version of the Hello World application
+            // will set the TextView text programmatically instead of through the XML as is
+            // the default.
+            TextView textView = (TextView) rootView.findViewById(R.id.hellow_world_textview);
+            textView.setText(getString(R.string.hello_world));
             return rootView;
         }
     }
